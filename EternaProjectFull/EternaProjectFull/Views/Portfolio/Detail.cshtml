@@ -1,0 +1,60 @@
+﻿@model Portfolio
+
+    <main id="main">
+
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+        <ol>
+            <li><a asp-controller="portfolio" asp-action="index">Home</a></li>
+            <li>Portfolios</li>
+        </ol>
+        <h2>Portfolios</h2>
+
+    </div>
+</section><!-- End Breadcrumbs -->
+<!-- ======= Portfolio Details Section ======= -->
+<section id="portfolio-details" class="portfolio-details">
+    <div class="container">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-7">
+                <div class="portfolio-details-slider swiper">
+                    <div class="swiper-wrapper align-items-center">
+                        @foreach (PortfolioImages photo in Model.PortfolioImages)
+                        {
+                            <div class="swiper-slide">
+                                <img style="height: 600px ; width: 600px" src="~/assets/img/portfolio/@(photo.ImageUrl).jpg" alt="Phone">
+                            </div>
+                        }
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="portfolio-info">
+                    <h3>Phone information</h3>
+                    <ul>
+                        <li><strong>Category</strong>: @Model.Category.Name</li>
+                        <li><strong>Client</strong>: @Model.Client</li>
+                        <li><strong>Project date</strong>: @Model.ProjectDate.ToString("dd,MMMM,yyyy")</li>
+                        <li><strong>Project URL</strong>: <a href="@Model.ProjectUrl">www.eterna.com</a></li>
+                    </ul>
+                </div>
+                <div class="portfolio-description">
+                    <h2>@Model.Title</h2>
+                    <p>
+                        @Model.Description
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Portfolio Details Section -->
+</main><!-- End #main -->

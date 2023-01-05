@@ -1,0 +1,49 @@
+﻿@model Portfolio
+
+
+<div class="container pt-5">
+
+    <div class="container">
+        <h1 style="text-align:center">Update Portfolio</h1>
+    </div>
+
+
+
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="CategoryId">Category Id</label>
+            <input asp-for="CategoryId" class="form-control" placeholder="Enter CategoryId">
+            <span asp-validation-for="CategoryId" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Title">Title</label>
+            <input asp-for="Title" class="form-control" placeholder="Enter Left Title">
+            <span asp-validation-for="Title" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description">Description</label>
+            <input asp-for="Description" class="form-control" placeholder="Enter Right Title">
+            <span asp-validation-for="Description" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Client">Client</label>
+            <input asp-for="Client" class="form-control" placeholder="Enter Client">
+            <span asp-validation-for="Client" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProjectUrl">Project Url</label>
+            <input asp-for="ProjectUrl" class="form-control" placeholder="Enter Project Url">
+            <span asp-validation-for="ProjectUrl" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProjectDate">Description</label>
+            <input asp-for="ProjectDate" class="form-control" placeholder="Enter Project Date">
+            <span asp-validation-for="ProjectDate" style="color:red"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+</div>
+
+
+

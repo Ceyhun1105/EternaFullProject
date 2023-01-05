@@ -1,0 +1,42 @@
+﻿@model List<Client>
+@{
+    int counter = 0;
+}
+
+<div class="container pt-3">
+    <h2 style="text-align:center">Categories</h2>
+</div>
+
+<div class="container pt-5">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Id</th>
+                <th scope="col">ImageUrl</th>
+                <th scope="col">Actions</th>
+                <th scope="col">
+                    <a asp-controller="client" asp-action="create" class="btn btn-primary">Create</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Client cl in Model)
+            {
+                counter++;
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@cl.Id</td>
+                    <td>@cl.ImageUrl</td>
+                    <td>
+                        <a asp-controller="client" asp-action="update" asp-route-id="@cl.Id" class="btn btn-success">Update</a>
+                        <a asp-controller="client" asp-action="delete" asp-route-id="@cl.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+

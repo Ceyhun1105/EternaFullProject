@@ -1,0 +1,54 @@
+﻿@model List<Slider>
+@{
+    int counter = 0;
+}
+
+<div class="container pt-3">
+    <h2 style="text-align:center">Sliders</h2>
+</div>
+
+<div class="container pt-5">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Id</th>
+                <th scope="col">ImageUrl</th>
+                <th scope="col">TitleLeft</th>
+                <th scope="col">TitleRight</th>
+                <th scope="col">Description</th>
+                <th scope="col">ReadMoreUrl</th>
+                <th scope="col">
+                    <a asp-controller="Slider" asp-action="create" class="btn btn-primary">Create</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Slider cl in Model)
+            {
+                counter++;
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@cl.Id</td>
+                    <td> <img width="80px" src="~/assets/img/slide/@cl.ImageUrl"> 
+                        <a href="~/assets/img/slider/@(cl.ImageUrl)" data-gallery="portfolioGallery" class="portfolio-lightbox" title="@cl.ImageUrl"><i class="bx bx-plus"></i></a>
+                    </td>
+                    <td>@cl.TitleLeft</td>
+                    <td>@cl.TitleRight</td>
+                    <td>@cl.Description</td>
+                    <td>@cl.ReadMoreUrl</td>
+                    <td>
+                        <a asp-controller="Slider" asp-action="update" asp-route-id="@cl.Id" class="btn btn-success">Update</a>
+                        <a asp-controller="Slider" asp-action="delete" asp-route-id="@cl.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+

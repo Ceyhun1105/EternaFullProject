@@ -1,0 +1,54 @@
+﻿@model List<Portfolio>
+@{
+    int counter = 0;
+}
+
+<div class="container pt-3">
+    <h2 style="text-align:center">Portfolios</h2>
+</div>
+
+<div class="container pt-5">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Id</th>
+                <th scope="col">CategoryId</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Client</th>
+                <th scope="col">ProjectUrl</th>
+                <th scope="col">ProjectDate</th>
+                <th scope="col">
+                    <a asp-controller="Portfolio" asp-action="create" class="btn btn-primary">Create</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Portfolio cl in Model)
+            {
+                counter++;
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@cl.Id</td>
+                    <td>@cl.CategoryId</td>
+                    <td>@cl.Title</td>
+                    <td>@cl.Description</td>
+                    <td>@cl.Client</td>
+                    <td>@cl.ProjectUrl</td>
+                    <td>@cl.ProjectDate</td>
+                    <td>
+                        <a asp-controller="Portfolio" asp-action="update" asp-route-id="@cl.Id" class="btn btn-success">Update</a>
+                        <a asp-controller="Portfolio" asp-action="delete" asp-route-id="@cl.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+

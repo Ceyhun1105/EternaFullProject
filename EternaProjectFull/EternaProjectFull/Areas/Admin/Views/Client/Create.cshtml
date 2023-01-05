@@ -1,0 +1,21 @@
+﻿@model Client
+
+
+<div class="container pt-5">
+
+    <div class="container">
+        <h1 style="text-align:center">Create Client</h1>
+    </div>
+    
+
+
+<form method="post">
+  <div class="form-group">
+    <label asp-for="ImageUrl">ImageUrl</label>
+    <input asp-for="ImageUrl" class="form-control" placeholder="Enter ImageUrl">
+    <span asp-validation-for="ImageUrl" style="color:red"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+</div>

@@ -1,0 +1,41 @@
+﻿@model List<Category>
+@{
+    int counter = 0;
+}
+
+<div class="container pt-3">
+    <h2 style="text-align:center">Categories</h2>
+</div>
+
+<div class="container pt-5">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Actions</th>
+                <th scope="col">
+                    <a asp-controller="category" asp-action="create" class="btn btn-primary">Create</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Category ct in Model)
+            {
+                counter++;
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@ct.Id</td>
+                    <td>@ct.Name</td>
+                    <td>
+                        <a asp-controller="category" asp-action="update" asp-route-id="@ct.Id" class="btn btn-success">Update</a>
+                        <a asp-controller="category" asp-action="delete" asp-route-id="@ct.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

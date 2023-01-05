@@ -1,0 +1,50 @@
+﻿@model List<Count>
+@{
+    int counter = 0;
+}
+
+<div class="container pt-3">
+    <h2 style="text-align:center">Categories</h2>
+</div>
+
+<div class="container pt-5">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Id</th>
+                <th scope="col">Icon</th>
+                <th scope="col">TitleLeft</th>
+                <th scope="col">TitleRight</th>
+                <th scope="col">Url</th>
+                <th scope="col">FinalCount</th>
+                <th scope="col">
+                    <a asp-controller="Count" asp-action="create" class="btn btn-primary">Create</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Count cl in Model)
+            {
+                counter++;
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@cl.Id</td>
+                    <td>@Html.Raw(cl.Icon)</td>
+                    <td>@cl.TitleLeft</td>
+                    <td>@cl.TitleRight</td>
+                    <td>@cl.FindUrl</td>
+                    <td>@cl.FinalCount</td>
+                    <td>
+                        <a asp-controller="Count" asp-action="update" asp-route-id="@cl.Id" class="btn btn-success">Update</a>
+                        <a asp-controller="Count" asp-action="delete" asp-route-id="@cl.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+

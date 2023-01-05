@@ -1,0 +1,42 @@
+﻿@model Count
+
+
+<div class="container pt-5">
+
+    <div class="container">
+        <h1 style="text-align:center">Create Count</h1>
+    </div>
+
+
+
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Icon">Icon</label>
+            <input asp-for="Icon" class="form-control" placeholder="Enter Icon">
+            <span asp-validation-for="Icon" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TitleLeft">Left Title</label>
+            <input asp-for="TitleLeft" class="form-control" placeholder="Enter Left Title">
+            <span asp-validation-for="TitleLeft" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TitleRight">Icon</label>
+            <input asp-for="TitleRight" class="form-control" placeholder="Enter Right Title">
+            <span asp-validation-for="TitleRight" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="FindUrl">Url</label>
+            <input asp-for="FindUrl" class="form-control" placeholder="Enter Url">
+            <span asp-validation-for="FindUrl" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="FinalCount">Final Count</label>
+            <input asp-for="FinalCount" class="form-control" placeholder="Enter Count">
+            <span asp-validation-for="FinalCount" style="color:red"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+
+</div>
+
